@@ -1,12 +1,14 @@
-from PyQt5 import uic
-from PyQt5.QtWidgets import QApplication
+import sys
+
+from PyQt5 import QtWidgets
+
+from simplest_note.note_body import UiNote
 
 
-if __name__ == '__main__':
-    Form, Window = uic.loadUiType("note_body.ui")
-    app = QApplication([])
-    window = Window()
-    form = Form()
-    form.setupUi(window)
-    window.show()
-    app.exec_()
+if __name__ == "__main__":
+    app = QtWidgets.QApplication(sys.argv)
+    Note = QtWidgets.QMainWindow()
+    ui = UiNote()
+    ui.setupUi(Note)
+    Note.show()
+    sys.exit(app.exec_())
